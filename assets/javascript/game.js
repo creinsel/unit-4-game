@@ -5,46 +5,86 @@ var wins=0;
 var losses=0;
 var totalScore=0;
 var crystalValues=[];
-var crystalPics=["assets/images/image0.jpeg","assets/images/image2.jpeg","assets/images/image1.jpeg","assets/images/image3.jpeg"];
+//var crystalPics=["assets/images/image0.jpeg","assets/images/image2.jpeg","assets/images/image1.jpeg","assets/images/image3.jpeg"];
 var isFinished= false;
 
+//generate 4 random values between 1-12 and push to crystalValues array
+for (let index = 0; index < 4; index++) {
+    var crystInd = Math.floor(Math.random()*13);
+    crystalValues.push(crystInd);
+};
 
-// console log randomNumber
-console.log(randomNumber)
+console.log(crystalValues)
+
+// resets game if player is finished
+
+function reset(){
+    // resets total score to zero
+    var totalScore=0;
+    //generates random number
+    var randomNumber=Math.floor(Math.random()*102)+19;
+    
+    $(".score").text(randomNumber);
+   
+    }
 
 //how game will know if player is finished playing
 // isFinished= true 
 if(totalScore===randomNumber){
     wins++;
-    alert("Winner Winner Chicken Dinner!")
+    $(".wins").text(wins);
+    alert("Winner Winner Chicken Dinner!");
     isFinished=true;}
 
     if(totalScore>randomNumber){
         losses++;
-        alert("Your score does not match the random number, try again")
+        $(".losses-num").text(losses);
+        alert("Your score does not match the random number, try again");
         isFinished=true
     };
 
-// resets game if player is finished
-function reset(){
-    if(isFinished){
-    var totalScore=0;
-    var randomNumber=Math.floor(Math.random()*102)+19;
-    var crystalValues=[];
-    }
+
+
+    
+
+if(isFinished){
+reset()
 };
 
 reset();
-$(".score").text(randomNumber);
+
+//$(".score").text(randomNumber);
 $(".wins").text(wins);
 $(".losses-num").text(losses);
+$(".score-pop").text(totalScore);
 
-//generate 4 random numbers between 1-12
-for (let index = 0; index < 4; index++) {
-    const element = Math.floor(Math.random()*13);
-    crystalValues.push(element);
-}
-console.log(crystalValues)
 
-//assign random numbers to pics
+//assign random crystalValues to crystalPics through click event
+ $("#img-1").on("click", function(){
+     totalScore= totalScore+ crystalValues[0];
+     console.log(totalScore);
+     $(".score-pop").text(totalScore);
+     ;
+ });
+
+$("#img-2").on("click", function(){
+    totalScore= totalScore+ crystalValues[1];
+    console.log(totalScore);
+    $(".score-pop").text(totalScore)
+});
+
+$("#img-3").on("click", function(){
+    totalScore= totalScore+ crystalValues[2];
+    console.log(totalScore);
+    $(".score-pop").text(totalScore)
+})
+
+$("#img-4").on("click", function(){
+    totalScore= totalScore+ crystalValues[3];
+    console.log(totalScore);
+    $(".score-pop").text(totalScore)
+})
+
+
+
 

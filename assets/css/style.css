@@ -130,3 +130,16 @@ img{
     border:2px solid rgb(55,0,55);
    
 }
+
+.total-score{
+   background-color: rgb(55,0,55);
+   margin:15px 300px 5px 300px;
+   text-align: center;
+   color:white;
+   border:2px solid rgb(55,0,55);
+}
+
+.score-pop{
+    text-align: center;
+    color:white;
+}

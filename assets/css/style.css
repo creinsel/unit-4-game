@@ -9,6 +9,10 @@ h3{
     text-align: center;
 }
 
+p{
+    margin-top: 5px;
+}
+
 .name-game{
 font-family: 'Fredericka the Great', cursive;
 border: 4px solid rgb(55,0,55);
@@ -44,13 +48,28 @@ background-color:rgb(55,0,55);
 .container-w-l{
     border:2px solid rgb(55,0,55);
     background-color: rgb(241,0,94);
-    margin:auto;
+    padding:0px;
     margin:5px 200px 5px 5px;
     height: 200px;
     width: 200px;
     color:white;
+    font-size: 26px;
     text-align: center;
 
+}
+.wins{
+    font-size:20px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.losses{
+    font-size:26px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.losses-num{
+    font-size: 20px;
+    margin-top:5px;
 }
 
 #container-rn{
@@ -64,8 +83,17 @@ background-color:rgb(55,0,55);
     height:200px;
     width:200px;
     color:white;
+    
     text-align: center;
 
+}
+.random-num{
+    color:white;
+    font-size:30px;
+}
+.score{
+    color:white;
+    font-size: 26px;
 }
 
 .img-container{

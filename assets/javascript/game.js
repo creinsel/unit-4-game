@@ -1,12 +1,11 @@
-
+$(document).ready()
 // generate random number betweer 19-120
 var randomNumber=Math.floor(Math.random()*102)+19; 
 var wins=0;
 var losses=0;
 var totalScore=0;
 var crystalValues=[];
-//var crystalPics=["assets/images/image0.jpeg","assets/images/image2.jpeg","assets/images/image1.jpeg","assets/images/image3.jpeg"];
-var isFinished= false;
+
 
 //generate 4 random values between 1-12 and push to crystalValues array
 function fourNum(){
@@ -21,13 +20,16 @@ console.log(crystalValues)
 
 function reset(){
     // resets total score to zero
-    var totalScore=0;
+    totalScore=0;
+    crystalValues;
+    fourNum();
     //generates random number
-    randomNumber;
+    randomNumber=Math.floor(Math.random()*102)+19;
    // writes random number to screen 
     $(".score").text(randomNumber);
-    fourNum();
+    $(".score-pop").empty();
     
+    console.log(crystalValues);
 };
    
  
@@ -47,7 +49,6 @@ $(".score-pop").text(totalScore);
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
-         isFinished=true;
         reset();
     }
     
@@ -55,7 +56,6 @@ $(".score-pop").text(totalScore);
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
-        isFinished=true;
         reset();
     }
     
@@ -70,14 +70,14 @@ $("#img-2").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
-        isFinished=true;
+        reset();
     }
     
     else if(totalScore>randomNumber){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
-        isFinished=true;
+        reset();
     }
     
 });
@@ -90,14 +90,14 @@ $("#img-3").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
-        isFinished=true;
+        reset();
     }
     
     else if(totalScore>randomNumber){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
-        isFinished=true;
+        reset();
         
     }
    
@@ -111,14 +111,14 @@ $("#img-4").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
-        isFinished=true;
+        reset();
     }
     
     else if(totalScore>randomNumber){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
-        isFinished=true;
+        reset();
        
         
 }

@@ -9,13 +9,12 @@ var crystalValues=[];
 var isFinished= false;
 
 //generate 4 random values between 1-12 and push to crystalValues array
-
+function fourNum(){
     for (let index = 0; index < 4; index++) {
     var crystInd = Math.floor(Math.random()*13);
     crystalValues.push(crystInd);
+}
 };
-
-
 console.log(crystalValues)
 
 // resets game if player is finished
@@ -27,10 +26,11 @@ function reset(){
     randomNumber;
    // writes random number to screen 
     $(".score").text(randomNumber);
+    fourNum();
     
 };
    
-reset();  
+ 
 
 //$(".score").text(randomNumber);
 $(".wins").text(wins);
@@ -47,7 +47,8 @@ $(".score-pop").text(totalScore);
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
-        isFinished=true;
+         isFinished=true;
+        reset();
     }
     
     else if(totalScore>randomNumber){
@@ -55,6 +56,7 @@ $(".score-pop").text(totalScore);
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
         isFinished=true;
+        reset();
     }
     
      
@@ -117,13 +119,13 @@ $("#img-4").on("click", function(){
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
         isFinished=true;
-    }
-    
-})
+       
+        
+}
+});
 
+    reset();
+  
 
-if(isFinished=true){
-    reset()
-    };
 
 

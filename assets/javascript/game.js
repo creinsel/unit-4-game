@@ -16,6 +16,10 @@ function fourNum(){
 };
 console.log(crystalValues)
 
+function clearCrys(){
+    crystalValues=[];
+}
+
 // resets game if player is finished
 
 function reset(){
@@ -49,6 +53,7 @@ $(".score-pop").text(totalScore);
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
+        clearCrys();
         reset();
     }
     
@@ -56,6 +61,7 @@ $(".score-pop").text(totalScore);
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
+        clearCrys();
         reset();
     }
     
@@ -70,6 +76,7 @@ $("#img-2").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
+        clearCrys();
         reset();
     }
     
@@ -77,6 +84,7 @@ $("#img-2").on("click", function(){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
+        clearCrys();
         reset();
     }
     
@@ -90,6 +98,7 @@ $("#img-3").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
+        clearCrys();
         reset();
     }
     
@@ -97,6 +106,7 @@ $("#img-3").on("click", function(){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
+        clearCrys();
         reset();
         
     }
@@ -111,6 +121,7 @@ $("#img-4").on("click", function(){
         wins++;
         $(".wins").text(wins);
         alert("Winner Winner Chicken Dinner!");
+        clearCrys();
         reset();
     }
     
@@ -118,6 +129,7 @@ $("#img-4").on("click", function(){
         losses++;
         $(".losses-num").text(losses);
         alert("Your score does not match the random number, try again");
+        clearCrys();
         reset();
        
         
